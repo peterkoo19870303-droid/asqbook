@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /thank-you/
+Disallow: /preview/
+
+Sitemap: https://ladderandloop.com/sitemap.xml

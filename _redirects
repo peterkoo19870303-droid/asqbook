@@ -1,0 +1,9 @@
+# No redirects needed yet.
+#
+# When a second bundle is added later, the current homepage content will
+# move to /collections/first-year-bundle/ and the homepage will become a
+# list of bundles. At that point, add a redirect here so any links people
+# have already shared to "/" for buying still make sense, and so any
+# bookmarked anchors (like /#buy) still resolve usefully:
+#
+# /old-path   /new-path   301

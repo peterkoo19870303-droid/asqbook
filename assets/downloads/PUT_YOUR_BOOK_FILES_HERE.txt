@@ -1,0 +1,11 @@
+Put your two real book files in this folder, named exactly:
+
+  the-engineering-ladder.pdf
+  running-the-room.pdf
+
+(If your files are .epub or another format instead of .pdf, either rename
+them to .pdf, or open /thank-you/index.html and change the two file
+extensions in the download links to match what you actually have.)
+
+Delete this text file once your real files are in place — it's just here
+so you don't lose the folder when you unzip the site.

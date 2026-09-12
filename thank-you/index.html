@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thank You | Ladder &amp; Loop</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+  <!--
+    ⚠️ TEST MODE — READ BEFORE LAUNCH ⚠️
+    This page currently skips Stripe entirely and links straight to local
+    files in /assets/downloads/, so you can click "Buy" anywhere on the
+    site and test the download experience before Stripe is wired up.
+
+    Every "Buy" / "Get the bundle" button on the site currently points
+    directly here — there is no real payment step yet.
+
+    Before you actually launch and take real payments:
+      1. Set up the Stripe Payment Link (see README.md).
+      2. Change its "after payment" redirect to:
+         https://your-domain/thank-you/?session_id={CHECKOUT_SESSION_ID}
+      3. Delete/replace this file's content with real order verification —
+         functions/thank-you/index.js already contains that logic and will
+         automatically take over this route once deployed to Cloudflare
+         Pages with Stripe + R2 configured (Functions take precedence over
+         a static file at the same path).
+      4. Point the "Buy" buttons on the homepage and book pages back to
+         your real Stripe Payment Link instead of "/thank-you/" directly.
+  -->
+  <div class="wrap nav">
+    <a href="/" class="wordmark">Ladder <span>&amp;</span> Loop</a>
+  </div>
+
+  <div class="wrap ty-box">
+    <h1>Thanks — here's your bundle</h1>
+    <p>The Engineering Ladder + Running the Room</p>
+    <div class="ty-downloads">
+      <a href="/assets/downloads/the-engineering-ladder.pdf" class="btn" target="_blank" rel="noopener">Download The Engineering Ladder</a>
+      <a href="/assets/downloads/running-the-room.pdf" class="btn" target="_blank" rel="noopener">Download Running the Room</a>
+    </div>
+    <p class="ty-note">Test mode: no payment was actually processed. See the comment at the top of this file's source for what to change before real launch.</p>
+    <p class="ty-note">Files not downloading? Make sure you've placed your real PDFs in <code>/assets/downloads/</code>, named exactly <code>the-engineering-ladder.pdf</code> and <code>running-the-room.pdf</code> — see the note file in that folder.</p>
+  </div>
+
+  <footer>
+    <div class="wrap">
+      <div class="footer-bottom">
+        <span>© 2026 Ladder &amp; Loop</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

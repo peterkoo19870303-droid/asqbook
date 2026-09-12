@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Get the Free Sample Chapter | Ladder &amp; Loop</title>
+<meta name="description" content="Get a free full sample chapter from The Engineering Ladder, sent straight to your inbox — no purchase required.">
+<link rel="canonical" href="https://ladderandloop.com/preview/">
+<meta name="robots" content="noindex, follow">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+
+  <div class="wrap nav" id="site-nav">
+    <a href="/" class="wordmark">Ladder <span>&amp;</span> Loop</a>
+    <div class="nav-links">
+      <a href="/#books" class="hide-mobile">Books</a>
+      <a href="/blog/">Blog</a>
+      <a href="/contact/" class="hide-mobile">Contact</a>
+      <a href="/#buy" class="btn btn-sm">Buy — $59</a>
+    </div>
+  </div>
+
+  <div class="wrap-narrow">
+    <div class="breadcrumb"><a href="/">Home</a> / Free sample</div>
+
+    <section class="no-border-top" style="padding-top:0; text-align:center;">
+      <h1 style="font-size:30px; margin-bottom:16px;">Get the full first chapter, free</h1>
+      <p style="color:var(--ink-soft); font-size:16px; max-width:480px; margin:0 auto 36px;">A complete, unabridged chapter from <strong>The Engineering Ladder</strong> — sent to your inbox as a PDF. No purchase, no spam, unsubscribe any time.</p>
+
+      <form id="preview-form" method="POST" action="/api/preview-signup" style="max-width:420px; margin:0 auto; text-align:left;">
+        <label for="pv-email" style="display:block; font-size:13px; color:var(--ink-soft); margin-bottom:6px; font-family:'IBM Plex Mono', monospace;">Email address</label>
+        <input type="email" id="pv-email" name="email" required placeholder="you@company.com"
+          style="width:100%; padding:13px 16px; border:1px solid var(--line); border-radius:3px; font-size:15px; margin-bottom:14px;">
+        <button type="submit" class="btn btn-block">Send me the sample chapter</button>
+        <div class="form-status" id="preview-status" style="text-align:center; margin-top:14px;"></div>
+      </form>
+    </section>
+  </div>
+
+  <footer>
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-links">
+          <a href="/#books">Books</a>
+          <a href="/blog/">Blog</a>
+          <a href="/contact/">Contact</a>
+          <a href="/privacy/">Privacy</a>
+          <a href="/terms/">Terms</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Ladder &amp; Loop</span>
+        <span>Placeholder content — replace with real copy before launch</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('site-nav');
+    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 8));
+
+    // Wire this up to your email provider (ConvertKit / Buttondown) form action,
+    // or route through a Pages Function that calls their API server-side.
+    const form = document.getElementById('preview-form');
+    const status = document.getElementById('preview-status');
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      status.className = 'form-status';
+      status.textContent = 'Sending…';
+      status.style.display = 'block';
+      try {
+        const res = await fetch(form.action, { method: 'POST', body: new FormData(form) });
+        if (!res.ok) throw new Error('failed');
+        status.className = 'form-status ok';
+        status.textContent = 'Check your inbox — the sample chapter is on its way.';
+        form.reset();
+      } catch (err) {
+        status.className = 'form-status err';
+        status.textContent = 'Something went wrong — try again in a moment.';
+      }
+    });
+  </script>
+
+</body>
+</html>
